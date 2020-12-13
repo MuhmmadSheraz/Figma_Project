@@ -4,10 +4,10 @@
   box-sizing: border-box;
 }
 html {
-  width: 100%;
+  width: 100% !important;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 body {
   font-family: Roboto;
@@ -52,6 +52,7 @@ body {
   background-size: cover;
   height: 800px !important;
   position: relative;
+  border-radius: 0px 0px 40px 40px;
 }
 
 .text_wrapper {
@@ -60,6 +61,7 @@ body {
   left: 10%;
 }
 .bannerHeader {
+  border-radius: 0px 0px 40px 40px;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -69,8 +71,9 @@ body {
 }
 
 .contentBox {
+  display: none;
   height: 400px;
-  width: 800px;
+  width: 900px;
   position: absolute;
   top: 10%;
   left: 25%;
@@ -88,8 +91,10 @@ body {
 }
 .contentBox_Image {
   height: 150px !important;
+  background-size: cover;
+  background-position: center;
   border-radius: 30px;
-  width: 100%;
+  width: inherit;
 }
 .content_box_text {
   font-style: snormal;
@@ -229,6 +234,21 @@ body {
   border-radius: 50%;
   margin-right: 5px;
 }
+.knowWapper {
+  margin-top: 200px !important;
+}
+.smallNavButtons {
+  height: 100%;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+}
+
+.nav_Items {
+  font-weight: bold;
+  color: white;
+  font-size: 55px;
+}
 /* Mediq Queries */
 
 @media (max-width: 1560px) {
@@ -314,6 +334,18 @@ body {
   }
 }
 @media (max-width: 768px) {
+  .subsBtn {
+    background-color: #e53212;
+    color: white;
+    font-size: 25px !important;
+    padding: 20px 20px !important;
+    border-radius: 30px !important;
+    display: inline-block !important;
+    margin-top: 20px !important;
+  }
+  #hamburger {
+    display: block;
+  }
   .terms {
     flex-direction: column;
   }
@@ -335,7 +367,47 @@ body {
     font-size: 12px;
   }
 }
+@media (max-width: 636px) {
+  .subs_Btn {
+    background-color: #e53212;
+    color: white;
+    font-size: 25px ;
+    padding: 20px 150px  !important;
+    border-radius: 30px ;
+    display: inline-block ;
+    margin-top: 20px ;
+  }
+  .lgnBtn {
+    border: 2px solid white !important;
+    background-color: transparent;
+    color: white;
+    font-size: 25px ;
+    padding: 20px 150px  !important;
+    border-radius: 30px ;
+    display: inline-block ;
+    margin-top: 20px ;
+  }
+}
 @media (max-width: 460px) {
+  .subs_Btn {
+    background-color: #e53212;
+    color: white;
+    font-size: 25px ;
+    padding: 20px 100px  !important;
+    border-radius: 30px ;
+    display: inline-block ;
+    margin-top: 20px ;
+  }
+  .lgnBtn {
+    border: 2px solid white !important;
+    background-color: transparent;
+    color: white;
+    font-size: 25px ;
+    padding: 20px 100px  !important;
+    border-radius: 30px ;
+    display: inline-block ;
+    margin-top: 20px ;
+  }
   .commentBox {
     margin-left: 5px;
     background-color: white;
@@ -355,4 +427,152 @@ body {
     font-size: 14px;
     border-radius: 30px;
   }
+}
+
+/* Break */
+.small_Nav_buttons {
+  overflow: hidden !important;
+  width: 100%;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: radial-gradient(
+    16887% 16887% at 51497% 18869%,
+    #3b65b0 0%,
+    #4f89c8 24%,
+    #5fa0d7 52%,
+    #77b4e2 100%
+  );
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+#mobNav {
+  overflow: hidden;
+}
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+.smallNavLogo {
+  position: absolute;
+  top: 30px;
+  left: 35px;
+  height: 80px !important;
+}
+.login2 {
+  padding: 5px 45px;
+  color: #e53212;
+  font-size: 20px;
+  border-radius: 50px;
+  outline: none !important;
+  border: 2px solid white;
+  background-color: transparent;
+  margin: 5px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+  .smallNavLogo {
+    height: 80px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .hamburger {
+    display: block !important;
+  }
+  #mobNav {
+    display: block !important;
+  }
+  nav {
+    display: none !important;
+  }
+}
+.hamburger {
+  display: none;
+  font-size: 25px !important;
+}
+.dropdown-menu {
+  background-color: transparent !important;
+  border: 0px !important;
+  width: 100%;
+
+  text-align: center !important;
+}
+.dropdown-item {
+  color: white !important;
+  font-size: 50px !important;
+  font-weight: bold !important;
+  text-align: center !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto !important;
+}
+.btn-smallNav {
+  font-size: 25px;
+  padding: 20px 250px;
+  border-radius: 30px;
+  display: inline-block;
+  margin-top: 20px;
+}
+.subs_Btn {
+  background-color: #e53212;
+  color: white;
+  font-size: 25px ;
+  padding: 20px 250px ;
+  border-radius: 30px ;
+  display: inline-block ;
+  margin-top: 20px ;
+}
+.lgnBtn {
+  border: 2px solid white !important;
+  background-color: transparent;
+  color: white;
+  font-size: 25px ;
+  padding: 20px 250px ;
+  border-radius: 30px ;
+  display: inline-block ;
+  margin-top: 20px ;
 }

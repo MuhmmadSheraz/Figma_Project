@@ -26,9 +26,54 @@
     />
   </head>
 
-  <body>
+  <body onclick="closeAbout()">
     <!-- NAVBAR -->
     <div class="mainWrapper">
+      <!-- Break -->
+      <div class="d-none" id="mobNav">
+        <div id="myNav" class="overlay">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+            >&times;</a
+          >
+          <img src="./assests/logo.png" class="smallNavLogo" />
+          <div class="overlay-content">
+            <p class="nav_Items">HOME</p>
+            <p
+              class="nav-link dropdown-toggle nav_Items"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              About
+            </p>
+            <div
+              class="dropdown-menu text-center"
+              aria-labelledby="navbarDropdown"
+            >
+              <a class="dropdown-item" href="#">About</a>
+              <a class="dropdown-item" href="#">Our Story</a>
+              <a class="dropdown-item" href="#">News & Events</a>
+              <a class="dropdown-item" href="#">FAQ</a>
+              <a class="dropdown-item" href="#">Contact Us</a>
+            </div>
+          </div>
+          <span class="small_Nav_buttons ">
+            <button class="subs_Btn">Subscribe</button>
+            <br/>
+            <button class=" lgnBtn ">Login</button>
+          </span>
+        </div>
+        <span
+          style="font-size: 30px; cursor: pointer"
+          class="d-none"
+          onclick="openNav()"
+          >&#9776;
+        </span>
+      </div>
+      <!-- BREAK -->
       <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
         <a class="navbar-brand" href="#"
           ><img src="./assests/logo.png" class="nav_logo"
@@ -62,22 +107,17 @@
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
+                onclick="openAbout()"
               >
                 About
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <button class="login">Login</button>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
               <button class="signUp">Subscribe</button>
             </li>
           </ul>
@@ -86,12 +126,18 @@
       <!-- Banner -->
       <div class="banner">
         <div class="bannerHeader">
+          <span
+            style="font-size: 30px; cursor: pointer; float: right"
+            class="hamburger text-white"
+            onclick="openNav()"
+            >&#9776;
+          </span>
           <div class="container sub_Text">
             <span class="text_wrapper">
               <h1 class="text-white">Changing Lives</h1>
               <h1 class="text-white">By connecting with family and friends</h1>
             </span>
-            <div class="contentBox container">
+            <div class="contentBox" id="conBox">
               <div class="row pt-3">
                 <div class="col-md-6">
                   <p class="contextBox_List">Our Story</p>
@@ -142,7 +188,7 @@
           <h1 class="sub_member_heading">What our members say...</h1>
         </div>
         <div class="commentWrapper">
-          <div class="commentBox ">
+          <div class="commentBox">
             <p class="mb-3">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
               reprehenderit dolores!
@@ -203,7 +249,7 @@
       </div>
 
       <!-- Know About Club -->
-      <div class="container-fluid  knowWapper">
+      <div class="container-fluid knowWapper">
         <div class="mx-2 pb-5 know_Box mt-5">
           <div class="row">
             <div class="col-md-8 left_know">
@@ -227,21 +273,36 @@
             <i class="fab fa-youtube mx-3"></i>
           </div>
           <div class="terms d-flex justify-content-center align-item-center">
-            <p class="mx-1">Cookies</p>
-            <p class="mx-1">Data Protection</p>
-            <p class="mx-1">Terms & Condition</p>
-            <p class="mx-1">Income Disclaimer</p>
+            <p class="mx-3 font-weight-bold">Cookies</p>
+            <p class="mx-3 font-weight-bold">Data Protection</p>
+            <p class="mx-3 font-weight-bold">Terms & Condition</p>
+            <p class="mx-3 font-weight-bold">Income Disclaimer</p>
           </div>
           <h4
-            class="terms d-flex justify-content-center align-item-center pt-4"
+            class="terms d-flex justify-content-center align-item-center pt-4 text-muted"
           >
-            Crediblity
+            © Club Billion 2021. All rights reserved.
           </h4>
         </div>
       </div>
     </div>
 
     <!-- Scripting -->
+    <script>
+      function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+      }
+      function openAbout() {
+        document.getElementById("conBox").style.display = "block";
+      }
+      function closeAbout() {
+        document.getElementById("conBox").style.display = "none";
+      }
+
+      function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+      }
+    </script>
     <script
       src="https://kit.fontawesome.com/e6eab47809.js"
       crossorigin="anonymous"
